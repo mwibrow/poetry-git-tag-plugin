@@ -3,13 +3,15 @@
 This package is a plugin that allows creation of git tags when
 bumping versons with `poetry version`.
 
+**This repo is highly experimental**
+
 ## Installation
 
 The easiest way to install the `poetry-git-tags-plugin` plugin is via `pip`:
 
 
 ```bash
-pip install poetry-git-tags-plugin
+pip install git+ssh://git@github.com/cloudfind/poetry-git-tags-plugin.git#main
 ```
 
 
