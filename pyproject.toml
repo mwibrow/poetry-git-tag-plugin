@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "poetry-git-tag-plugin"
-version = "0.0.1"
+name = "poetry-git-tags-plugin"
+version = "0.0.2"
 description = "Poetry plugin to create git tags when bumping versions"
 authors = ["Mark Wibrow"]
 license = "MIT"
