@@ -2,7 +2,7 @@
 name = "poetry-git-tag-plugin"
 version = "0.0.0"
 description = "Poetry plugin to create git tags when bumping versions"
-authors = ["Mark Wibrow <m.wibrow@gmail.com>"]
+authors = ["Mark Wibrow"]
 license = "MIT"
 readme = "README.md"
 
