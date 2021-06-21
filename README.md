@@ -5,15 +5,11 @@ bumping versons with `poetry version`.
 
 ## Installation
 
-The easiest way to install the `export` plugin is via the `plugin add` command of Poetry.
-
-```bash
-poetry plugin add poetry-git-tags-plugin
-```
+The easiest way to install the `poetry-git-tags-plugin` plugin is via `pip`:
 
 
 ```bash
-pip install poetry-export-plugin
+pip install poetry-git-tags-plugin
 ```
 
 
