@@ -48,7 +48,7 @@ class VersionCommand(VersionCommandCore):
 
                 git = Git(self.poetry.file._path)
                 git.run("commit", ".", "-m", tag)
-                git.run("git", "tag", "-a", "-m", tag, tag)
+                git.run("tag", "-a", "-m", tag, tag)
                 # repo.git.execute(["git", "commit", ".", "-m", tag])
                 # repo.git.execute(["git", "tag", "-a", "-m", tag, tag])
                 # self.poetry.core.git
