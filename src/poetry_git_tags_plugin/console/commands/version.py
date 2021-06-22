@@ -42,16 +42,10 @@ class VersionCommand(VersionCommandCore):
                 prefix = self.option("prefix")
                 tag = "{}{}".format(prefix, version.text)
 
-                # repo = Repo(os.path.dirname(self.poetry.file._path))
-
-                # assert not repo.bare
-
                 git = Git(os.path.dirname(self.poetry.file._path))
                 git.run("commit", ".", "-m", tag)
                 git.run("tag", "-a", "-m", tag, tag)
-                # repo.git.execute(["git", "commit", ".", "-m", tag])
-                # repo.git.execute(["git", "tag", "-a", "-m", tag, tag])
-                # self.poetry.core.git
+
                 self.line("Created tag <fg=green>{}</>".format(tag))
         else:
             if self.option("short"):
