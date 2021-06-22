@@ -1,6 +1,6 @@
 from cleo.helpers import option
 
-from git import Repo
+
 import os
 
 from poetry.console.commands.version import VersionCommand as VersionCommandCore
@@ -46,7 +46,7 @@ class VersionCommand(VersionCommandCore):
 
                 # assert not repo.bare
 
-                git = Git(self.poetry.file._path)
+                git = Git(os.path.dirname(self.poetry.file._path))
                 git.run("commit", ".", "-m", tag)
                 git.run("tag", "-a", "-m", tag, tag)
                 # repo.git.execute(["git", "commit", ".", "-m", tag])
