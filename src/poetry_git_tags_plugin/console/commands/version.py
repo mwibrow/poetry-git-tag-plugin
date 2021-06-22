@@ -4,6 +4,7 @@ from git import Repo
 import os
 
 from poetry.console.commands.version import VersionCommand as VersionCommandCore
+from poetry.core.vcs.git import Git
 
 
 class VersionCommand(VersionCommandCore):
@@ -41,12 +42,16 @@ class VersionCommand(VersionCommandCore):
                 prefix = self.option("prefix")
                 tag = "{}{}".format(prefix, version.text)
 
-                repo = Repo(os.path.dirname(self.poetry.file._path))
+                # repo = Repo(os.path.dirname(self.poetry.file._path))
 
-                assert not repo.bare
-                repo.git.execute(["git", "commit", ".", "-m", tag])
-                repo.git.execute(["git", "tag", "-a", "-m", tag, tag])
+                # assert not repo.bare
 
+                git = Git(self.poetry.file._path)
+                git.run("commit", ".", "-m", tag)
+                git.run("git", "tag", "-a", "-m", tag, tag)
+                # repo.git.execute(["git", "commit", ".", "-m", tag])
+                # repo.git.execute(["git", "tag", "-a", "-m", tag, tag])
+                # self.poetry.core.git
                 self.line("Created tag <fg=green>{}</>".format(tag))
         else:
             if self.option("short"):
